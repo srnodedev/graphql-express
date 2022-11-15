@@ -4,14 +4,14 @@ const graphql = require('graphql')
 const joinMonster = require('join-monster')
 
 // Connect to database
-// const { Client } = require('pg')
-// const client = new Client({
-//   host: "localhost",
-//   user: "postgres",
-//   password: "postgres",
-//   database: "league"
-// })
-// client.connect();
+const { Client } = require('pg')
+const client = new Client({
+  host: "localhost",
+  user: "postgres",
+  password: "postgres",
+  database: "league"
+})
+client.connect();
 
 const QueryRoot = new graphql.GraphQLObjectType({
   name: 'Query',
@@ -19,6 +19,10 @@ const QueryRoot = new graphql.GraphQLObjectType({
     hello: {
       type: graphql.GraphQLString,
       resolve: () => "Hello world!"
+    },
+    wonder: {
+      type: graphql.GraphQLString,
+      resolve: () => "I'm wondering!"
     }
   })
 })
