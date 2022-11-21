@@ -4,7 +4,7 @@ const graphql = require('graphql')
 const joinMonster = require('join-monster')
 
 // Connect to database 
-const { Client } = require('pg')
+const { Client } = require('pg') 
 const client = new Client({
   host: "localhost",
   user: "postgres",
